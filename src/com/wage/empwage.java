@@ -17,18 +17,28 @@ public class empwage {
 		int emp_wage=0;
 		int no_of_working_days=20;
 		int total_wage=0;
-		for(int day=0;day<no_of_working_days;day++)
+		int total_emp_hrs=0;
+		int max_hrs=100;
+		int max_days=20;
+		int total_emp_days=0;
+		while(total_emp_hrs<max_hrs &&total_emp_days<max_days)
 		{
-		int empCheck=(int)Math.floor(Math.random()*10)%3;
+			total_emp_days+=1;
+		int empCheck=(int) (Math.floor(Math.random()*10)%3);
 		switch (empCheck) {
-		case  IS_FULL_TIME: emp_hrs=8;break;
-		case IS_PART_TIME: emp_hrs=4;break;
+		case  IS_FULL_TIME: emp_hrs=16;break;
+		case IS_PART_TIME: emp_hrs=8;break;
 		default: emp_hrs=0;
-		}	
+		}
+		total_emp_hrs+=emp_hrs;
 		emp_wage=emp_hrs*rate_per_hr ;
 		total_wage+=emp_wage;
-	}
-			System.out.println("Employee wage is "+total_wage);
+		}			
+		System.out.println("Employee wage is "+total_wage);
+		System.out.println("Total working hours is "+total_emp_hrs);
+		System.out.println("Total working days is "+total_emp_days);
+			
 			}
 
-}
+		}
+		

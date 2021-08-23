@@ -11,12 +11,15 @@ public class empwage {
 		//else
 			//System.out.println("Employee is absent"); 
 		final int IS_FULL_TIME =1;
+		int IS_PART_TIME =2;
 		int rate_per_hr =20;
 		int emp_hrs=0;
 		int emp_wage=0;
 		double empCheck=Math.floor(Math.random()*10)%2;
 		if (empCheck==IS_FULL_TIME)
 			emp_hrs=8;
+		else if (empCheck==IS_PART_TIME)
+			emp_hrs=4;
 			emp_wage=emp_hrs*rate_per_hr ;
 					
 			System.out.println("Employee wage is "+emp_wage);

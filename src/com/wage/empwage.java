@@ -3,14 +3,14 @@ package com.wage;
 public class empwage {
 
 	public static void main(String[] args) {
-		//System.out.println("welcome to EmpWage");
-		//final int IS_FULL_TIME =1;
-		//double empCheck=Math.floor(Math.random()*10)%2;
-		//if (empCheck==IS_FULL_TIME)
-			//System.out.println("Employee is present");
-		//else
-			//System.out.println("Employee is absent"); 
+		System.out.println("welcome to EmpWage");
 		final int IS_FULL_TIME =1;
+		double empCheck=Math.floor(Math.random()*10)%2;
+		if (empCheck==IS_FULL_TIME)
+			System.out.println("Employee is present");
+		else
+			System.out.println("Employee is absent"); 
+		
 		final int IS_PART_TIME =2;
 		int rate_per_hr =20;
 		int emp_hrs=0;
@@ -24,8 +24,8 @@ public class empwage {
 		while(total_emp_hrs<max_hrs &&total_emp_days<max_days)
 		{
 			total_emp_days+=1;
-		int empCheck=(int) (Math.floor(Math.random()*10)%3);
-		switch (empCheck) {
+		
+		switch ((int)empCheck) {
 		case  IS_FULL_TIME: emp_hrs=16;break;
 		case IS_PART_TIME: emp_hrs=8;break;
 		default: emp_hrs=0;

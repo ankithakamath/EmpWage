@@ -1,5 +1,9 @@
 package com.wage;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+
 public class empwage  {
 
 	
@@ -8,6 +12,9 @@ public class empwage  {
 
 	private int numOfCompany = 0;
 	private CompanyWage[] companyWageArr;
+	
+	private LinkedList<CompanyWage> companyEmpWageList;
+	private Map<String, CompanyWage> companyToEmpWageMap;
 
 	empwage() {
 		companyWageArr = new CompanyWage[5];

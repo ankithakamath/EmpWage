@@ -7,6 +7,14 @@ public class CompanyWage {
 	public final int maxHours;
 	public int totalWage;
 
+	/**
+	 * parameterised constructor to initialise member of class
+	 * 
+	 * @param company
+	 * @param ratePerHour
+	 * @param maxHours
+	 * @param maxDays
+	 */
 	public CompanyWage(String company, int ratePerHour, int maxHours, int maxDays) {
 		this.company = company;
 		this.ratePerHour = ratePerHour;
@@ -14,6 +22,11 @@ public class CompanyWage {
 		this.maxHours = maxHours;
 	}
 
+	/**
+	 * method to set total employee wage
+	 * 
+	 * @param totalWage
+	 */
 	public void setTotalEmpWage(int totalWage) {
 		this.totalWage = totalWage;
 	}
@@ -24,5 +37,3 @@ public class CompanyWage {
 	}
 
 }
-
-

@@ -1,6 +1,6 @@
 package com.wage;
 
-public class empwage {
+public class empwage  {
 
 	
 	public static final int IS_FULL_TIME = 1;
@@ -13,18 +13,30 @@ public class empwage {
 		companyWageArr = new CompanyWage[5];
 	}
 
-	public void addCompanyEmpWage(String company, int ratePerHour, int maxHours, int maxDays) {
+	/**
+	 * method to add company detail to companyEmpWageArr
+	 */
+	public void addCompanyWage(String company, int ratePerHour, int maxHours, int maxDays) {
 		companyWageArr[numOfCompany] = new CompanyWage(company, ratePerHour, maxHours, maxDays);
 		numOfCompany++;
 	}
 
-	private void computeEmpWage() {
+	/**
+	 * method to set total employee wage for each company
+	 */
+	public void computeEmpWage() {
 		for (int i = 0; i < numOfCompany; i++) {
 			companyWageArr[i].setTotalEmpWage(this.computeWage(companyWageArr[i]));
 			System.out.println(companyWageArr[i]);
 		}
 	}
 
+	/**
+	 * method to compute total employee wage for each company
+	 * 
+	 * @param companyEmpWage
+	 * @return totalWage
+	 */
 	public int computeWage(CompanyWage companyEmpWage) {
 		int empHour = 0;
 		int empWage = 0;
@@ -59,8 +71,8 @@ public class empwage {
 
 		empwage empWageBuilder = new empwage();
 
-		empWageBuilder.addCompanyEmpWage("ABC", 30, 140, 20);
-		empWageBuilder.addCompanyEmpWage("DEF", 20, 100, 20);
+		empWageBuilder.addCompanyWage("ABC", 30, 140, 20);
+		empWageBuilder.addCompanyWage("DEF", 20, 100, 20);
 		empWageBuilder.computeEmpWage();
 	}
 }

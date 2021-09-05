@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
-public class empwage  {
+public class empwage {
 
 	
 	public static final int IS_FULL_TIME = 1;
@@ -39,7 +39,10 @@ public class empwage  {
 
 		}
 	}
-
+	public  int getTotalWage(String company)
+	{
+		return companyToEmpWageMap.get(company).totalWage;
+	}
 	/**
 	 * method to compute total employee wage for each company
 	 * 
@@ -67,6 +70,7 @@ public class empwage  {
 			}
 			totalEmpHours += empHour;
 			empWage = empHour * companyEmpWage.ratePerHour;
+			System.out.println("\ndaily wage is "+empWage);
 			totalWage += empWage;
 		}
 		System.out.println("\ncompany name is" + companyEmpWage.company);

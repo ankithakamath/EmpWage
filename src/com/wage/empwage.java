@@ -10,31 +10,33 @@ public class empwage  {
 	public static final int IS_FULL_TIME = 1;
 	public static final int IS_PART_TIME = 2;
 
-	private int numOfCompany = 0;
-	private CompanyWage[] companyWageArr;
 	
-	private LinkedList<CompanyWage> companyEmpWageList;
+	
+	private LinkedList<CompanyWage> companyWageList;
 	private Map<String, CompanyWage> companyToEmpWageMap;
 
 	empwage() {
-		companyWageArr = new CompanyWage[5];
+		companyWageList = new LinkedList<>();
+		companyToEmpWageMap = new HashMap<>();
 	}
 
 	/**
 	 * method to add company detail to companyEmpWageArr
 	 */
 	public void addCompanyWage(String company, int ratePerHour, int maxHours, int maxDays) {
-		companyWageArr[numOfCompany] = new CompanyWage(company, ratePerHour, maxHours, maxDays);
-		numOfCompany++;
+		CompanyWage companyWage = new CompanyWage(company, ratePerHour, maxHours, maxDays);
+		companyWageList.add(companyWage);
+		companyToEmpWageMap.put(company, companyWage);
 	}
-
 	/**
 	 * method to set total employee wage for each company
 	 */
 	public void computeEmpWage() {
-		for (int i = 0; i < numOfCompany; i++) {
-			companyWageArr[i].setTotalEmpWage(this.computeWage(companyWageArr[i]));
-			System.out.println(companyWageArr[i]);
+		for (int i = 0; i < companyWageList.size(); i++) {
+			CompanyWage companyEmpWage = companyWageList.get(i);
+			companyEmpWage.setTotalEmpWage(this.computeWage(companyEmpWage));
+			System.out.println(companyEmpWage);
+
 		}
 	}
 
